@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,25 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+
+
+.msg{
+  display: none;
+  
 }
+
+.len{
+  display: none;
+  color:red;
+  font-size: smaller;
+}
+
+#outlined-basic{
+  width:305px;
+}
+
+
+
