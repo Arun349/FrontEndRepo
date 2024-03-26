@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Sidebar from  './Sidebar'
+import Cookies from 'js-cookie';
 // import RepairShop from './RepairShop';
+
 
 const FinalUserAppointment = () => {
     const [appointment, setAppointment] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    
     useEffect(() => {
         const fetchServices = async () => {
             setLoading(true);
@@ -13,8 +17,8 @@ const FinalUserAppointment = () => {
             setAppointment(response.data);
             console.log(response.data);
             setLoading(false);
+            
         };
-
         fetchServices();
     }, []);
 
@@ -24,8 +28,12 @@ const FinalUserAppointment = () => {
 
     return (
         <>
-        <h1>Your Appointments</h1><br></br>
-        <table className="table">
+        
+        <div><nav id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav></div>
+        <Sidebar/>
+        <br></br>
+        <h1 style={{marginLeft:"20%"}}>My Appointments</h1><br></br>
+        <table id="apptable" className="table">
             <thead>
                 <tr>
                     <th scope='col'>Appointment Id</th>
@@ -36,7 +44,8 @@ const FinalUserAppointment = () => {
                 </tr>
             </thead>
             <tbody>
-                {appointment.map(e => (
+                {appointment.filter((item)=>item.user.userId == Cookies.get("UserId"))
+                .map(e => (
                     <tr key={e.finalAppointmentId}>
                         <td>{e.finalAppointmentId}</td>
                         <td>{e.date}</td>

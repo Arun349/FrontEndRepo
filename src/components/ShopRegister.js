@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react'
 import axios from 'axios'
 import { useState, useRef } from 'react';
 import { Message } from 'rsuite';
-// import { Navigate, useNavigate } from 'react-router-dom';
+ import { Navigate, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField';
@@ -11,7 +11,7 @@ import PersonAddAltRoundedIcon from '@mui/icons-material/PersonAddAltRounded';
 
   
   const ShopRegister = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [ShopName, setShopName] = useState([""]);
   const [Email, setEmail] = useState();
   const [Contactno, setContactno] = useState([""]);
@@ -92,8 +92,8 @@ import PersonAddAltRoundedIcon from '@mui/icons-material/PersonAddAltRounded';
 
           setTimeout(() => {
             msgref.current.style.display = "none";
-            // navigate('/sign-in')
-          }, 2000);
+            navigate('shopLogin')
+          }, 500);
 
 
 
@@ -109,7 +109,7 @@ import PersonAddAltRoundedIcon from '@mui/icons-material/PersonAddAltRounded';
   }
 
   return (
-    <><nav id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
+    <><nav id="shopnavbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
      <div style={{marginTop:"-5%"}} className='auth-wrapper '>   <div className='auth-inner'> <form onSubmit={handleSignupForm}>
 
 <h3 data-testid="Heading"><PersonAddAltRoundedIcon fontSize='large' id="icon"/> Shop Register</h3>
@@ -177,7 +177,7 @@ import PersonAddAltRoundedIcon from '@mui/icons-material/PersonAddAltRounded';
     Sign Up
   </button> */}
 
-<Button type='submit' variant='contained' color="secondary">Sign Up</Button>
+<Button style={{background:"rgb(30, 83, 190)"}} type='submit' variant='contained' color="secondary">Sign Up</Button>
 
 
 </div>

@@ -29,12 +29,10 @@ const UserLogin = () => {
       'Content-Type': 'application/json',
     }
     let param = {
-
       email: Email,
       password: Password
 
     }
-
 
 
     let URL = "https://localhost:7209/api/User/api/Signin";
@@ -50,15 +48,17 @@ const UserLogin = () => {
         var result = JSON.parse(response.data)
         console.log(result.emailstatus) // or if you prefer this notation
         if (result.emailstatus == true && result.passwordstatus == true) {
+          Cookies.set('Emailid', Email, { expires: 7 });
+          
 
           console.log(msgref.current.innerText);
           //msgref.current.style.visibility = "visible";
           msgref.current.style.display="block";
           setTimeout(() => {
             msgref.current.style.display="block";
-            Cookies.set('Signin', true);
+            // Cookies.set('Signin', true);
             navigate('/Home')
-          }, 5000);
+          }, 500);
           setFocuspsd("")
 
         }
@@ -66,7 +66,7 @@ const UserLogin = () => {
           errmsg.current.style.display="block";
           setTimeout(() => {
             errmsg.current.style.display="none";
-          }, 3000);
+          }, 2000);
           
         }
 

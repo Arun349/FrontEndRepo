@@ -82,10 +82,13 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import ShopSidebar from './ShopSidebar';
+import Cookies from 'js-cookie';
 
 const FinalShop = () => {
     const [appointment, setAppointment] = useState([]);
     const [loading, setLoading] = useState(false);
+    
 
     useEffect(() => {
         fetchServices();
@@ -95,6 +98,8 @@ const FinalShop = () => {
         setLoading(true);
         const response = await axios.get('https://localhost:7209/api/FinalAppointment/Get');
         setAppointment(response.data);
+        
+        console.log(response.data);
         setLoading(false);
     };
 
@@ -133,11 +138,15 @@ const FinalShop = () => {
 
     return (
         <>
-        <h1>Repair Shop Page</h1><br></br>
-        <table className="table">
+        <div><nav id="shopnavbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav></div>
+        <ShopSidebar/>
+        <br></br>
+        <h2 style={{marginLeft:"18%"}}>Customer Appointments</h2><br></br>
+        <table style={{marginLeft:"18%",width:"80%",marginTop:"-0%"}} className="table">
             <thead>
                 <tr>
                     <th scope='col'>Appointment Id</th>
+                    <th scope='col'>Appointment Date</th>
                     <th scope='col'>Customer Name</th>
                     <th scope='col'>Contact Number</th>
                     <th scope='col'>Mobile Model</th>
@@ -147,9 +156,11 @@ const FinalShop = () => {
                 </tr>
             </thead>
             <tbody>
-                {appointment.map(e => (
+                {appointment.filter((item)=>item.repairShop.email==Cookies.get("Emailid"))
+                .map(e => (
                     <tr key={e.finalAppointmentId}>
                         <td>{e.finalAppointmentId}</td>
+                        <td>{e.date}</td>
                         <td>{e.user.name}</td>
                         <td>{e.user.contactNo}</td>
                         <td>{e.mobileModel}</td>

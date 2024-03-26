@@ -50,7 +50,7 @@ const ShopLogin = () => {
         var result = JSON.parse(response.data)
         console.log(result.emailstatus) // or if you prefer this notation
         if (result.emailstatus == true && result.passwordstatus == true) {
-
+          Cookies.set('Emailid', Email, { expires: 7 });
           console.log(msgref.current.innerText);
           //msgref.current.style.visibility = "visible";
           msgref.current.style.display="block";
@@ -58,7 +58,7 @@ const ShopLogin = () => {
             msgref.current.style.display="block";
             Cookies.set('Signin', true);
             navigate('/finalShop')
-          }, 5000);
+          }, 500);
           setFocuspsd("")
 
         }
@@ -98,7 +98,7 @@ const ShopLogin = () => {
 
 
   return (
-    <><nav id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
+    <><nav id="shopnavbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
 
  <div className='auth-wrapper '>   <div className='auth-inner'>
 
@@ -131,7 +131,7 @@ const ShopLogin = () => {
    </div> */}
   
    <div className="d-grid">
-   <Button type='submit' variant='contained' color="secondary">Sign In</Button>
+   <Button style={{background:"rgb(30, 83, 190)"}} type='submit' variant='contained' color="secondary">Sign In</Button>
      {/* <button type="submit" className="btn btn-primary">
        Submit
      </button> */}

@@ -127,3 +127,67 @@ margin-left: 28%;
   /* justify-content: center; */
 }
 
+
+
+
+/* side bar styles */
+
+.nav-pills li a:hover{
+  /* background-color:#E3E1D9; */
+  /* background-color:rgb(116, 116, 157); */
+  background-color: white;
+  color: black !important;
+
+}
+#dashboard{
+  width:70vw;
+  position:absolute;
+  left: 0;
+
+    }
+ 
+
+.item{
+  /* margin-left: -22vh; */
+ 
+}
+
+.color{
+  /* background-color: rgb(66, 66, 126); */
+  background-color: rgba(156,39,176,255);
+  min-height:88vh!important;
+  margin-top:-40;
+ 
+}
+
+/* .Menu{
+  margin-bottom:10;
+} */
+
+
+.p-2{
+  margin-top: 100;
+}
+
+#apptable{
+  margin-left: 18%;
+  width:70%
+}
+
+#shopnavbsp{
+  background-color:  rgb(30, 83, 190)!important;
+  color: white;
+}
+
+
+.color1{
+  background-color: rgb(30, 83, 190);
+}
+
+#demo-simple-select{
+  background: white;
+  
+
+}
+
+

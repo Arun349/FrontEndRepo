@@ -89,8 +89,8 @@ import Cookies from 'js-cookie';
           setTimeout(() => {
             msgref.current.style.display = "none";
             // Cookies.set('Signin', true);
-            navigate('/sign-in')
-          }, 2000);
+            navigate('/userLogin')
+          }, 500);
 
 
 

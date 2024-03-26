@@ -15,6 +15,7 @@ import FinalShop from './components/FinalShopView';
 import FinalStatus from './components/FinalStatus';
 import UserLogin from './components/UserLogin';
 import ShopLogin from './components/ShopLogin';
+// import Sidebar from './components/Sidebar';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <div>
       <Router>
         <Routes>
+        {/* <Route path='side' element={<Sidebar/>} /> */}
         <Route path='shopLogin' element={<ShopLogin/>} />
         <Route path='userLogin' element={<UserLogin/>}/>
         <Route path='finalStatus' element={<FinalStatus />}/>

@@ -15,12 +15,11 @@ import Cookies from 'js-cookie';
  
  
  
-function Sidebar() {
+function ShopSidebar() {
 
     const RemoveCookie=()=>{
         Cookies.remove('Emailid')
         Cookies.remove('UserId')
-        Cookies.remove("shopId")
 
     }
 
@@ -30,41 +29,41 @@ function Sidebar() {
         
     <div class="container-fixed dashboard" id='dashboard'>
     <div class="row flex-nowrap">
-        <div class="bg col-md-4 col-lg-3 min-vh-100 color">
+        <div class="bg col-md-4 col-lg-3 min-vh-100 color1">
        <b><hr style={{color:"white",marginTop:"-0%",width:"120%",}}></hr></b>
             <div class="p-2">
             
             <a class="d-flex text-decoration-none align-items-center">
             
-            <ManageAccountsIcon fontSize='large' style={{color:"HighlightText",paddingRight:5}} /><span class="fs-5 d-none d-sm-inline" style={{color:"HighlightText"}}>Customer Panel</span>
+            <ManageAccountsIcon fontSize='large' style={{color:"HighlightText",paddingRight:5}} /><span class="fs-5 d-none d-sm-inline" style={{color:"HighlightText"}}>Shop Panel</span>
             </a>
             <hr style={{color:"white",width:"120%"}}></hr>
             <ul class="nav nav-pills flex-column mt-4">
-                <li class="nav-item item">
-                <a href="./Home" class="nav-link text-white" >
-                <PhonelinkSetupIcon fontSize='medium'style={{paddingRight:5}} /><span class="fs-6 d-none d-sm-inline Menu" >Shops</span>
+                {/* <li class="nav-item item">
+                <a href="./finalShop" class="nav-link text-white" >
+                <PhonelinkSetupIcon fontSize='medium'style={{paddingRight:5}} /><span class="fs-6 d-none d-sm-inline Menu" >Appointments</span>
                 </a>
+                </li> */}
+                <li class="nav-item item">
+                    <a href="/finalShop" class="nav-link text-white">
+                    <Inventory2Icon fontSize='medium'style={{paddingRight:5}}/> <span class="fs-6 d-none d-sm-inline">Appointments</span>
+                    </a>
                 </li>
                 <li class="nav-item item">
-                    <a href="/finalUser" class="nav-link text-white">
-                    <Inventory2Icon fontSize='medium'style={{paddingRight:5}}/> <span class="fs-6 d-none d-sm-inline">My Appointments</span>
+                    <a href="/finalStatus" class="nav-link text-white">
+                        <ShoppingBagIcon fontSize='medium'style={{paddingRight:5}}/><span class="fs-6 d-none d-sm-inline">Repair Status</span>
                     </a>
                 </li>
                 {/* <li class="nav-item item">
-                    <a href="#order" class="nav-link text-white">
-                        <ShoppingBagIcon fontSize='medium'style={{paddingRight:5}}/><span class="fs-6 d-none d-sm-inline">Order Details</span>
-                    </a>
-                </li>
-                <li class="nav-item item">
                     <a href="./customer" class="nav-link text-white">
                         <PeopleIcon fontSize='medium'style={{paddingRight:5}}/><span class="fs-6  d-none d-sm-inline">Customer Details</span>
                     </a>
                 </li> */}
-                 <li class="nav-item item">
-                     <a href="/userLogin" onClick={RemoveCookie} class="nav-link text-white">
-                     <LogoutIcon fontSize='medium'style={{paddingRight:5}}/><span class="fs-6 d-none d-sm-inline">Logout</span>
-                     </a>
-                 </li>
+                <li class="nav-item item">
+                    <a href="/shopLogin" onClick={RemoveCookie} class="nav-link text-white">
+                    <LogoutIcon fontSize='medium'style={{paddingRight:5}}/><span class="fs-6 d-none d-sm-inline">Logout</span>
+                    </a>
+                </li>
             </ul>
         </div>
         </div>
@@ -77,4 +76,4 @@ function Sidebar() {
   )
 };
  
-export default Sidebar;
+export default ShopSidebar;
