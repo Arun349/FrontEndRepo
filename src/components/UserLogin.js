@@ -90,7 +90,7 @@ const UserLogin = () => {
 
 
   return (
-<><nav id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
+<><nav data-testid="Myloginnav" id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
  <div className='auth-wrapper '>   <div className='auth-inner'>
   
 
@@ -123,7 +123,7 @@ const UserLogin = () => {
    </div> */}
   
    <div className="d-grid">
-   <Button type='submit' variant='contained' color="secondary">Sign In</Button>
+   <Button type='submit' style={{background:"rgb(66, 66, 126)"}} variant='contained' color="secondary">Sign In</Button>
      {/* <button type="submit" className="btn btn-primary">
        Submit
      </button> */}
@@ -133,16 +133,16 @@ const UserLogin = () => {
    </p>
   
    
-   <div class="alert alert-success msg" ref={msgref} role="alert">
+   <div data-testid="Myscsmsg" id="lscsmsg" class="alert alert-success msg" ref={msgref} role="alert">
      Login Successful!
    </div>
 
 
-   <div class="alert alert-danger msg" ref={errmsg} role="alert">
+   <div data-testid="Myerrmsg" class="alert alert-danger msg" ref={errmsg} role="alert">
      Invalid email!
    </div>
 
-   <div class="alert alert-danger msg" ref={errmsg2} role="alert">
+   <div data-testid="Myerrmsg2" class="alert alert-danger msg" ref={errmsg2} role="alert">
      Incorrect Password!
    </div>
  </form>

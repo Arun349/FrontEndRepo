@@ -68,7 +68,7 @@ import PersonAddAltRoundedIcon from '@mui/icons-material/PersonAddAltRounded';
       lenref.current.style.display="none"
       
 
-      let URL = "https://localhost:7209/api/RepairShop";
+      let URL = "https://localhost:7209/api/RepairShop/Create";
       await axios.post(URL, param, {
         headers: headers
       }).then((response) => {
@@ -177,7 +177,7 @@ import PersonAddAltRoundedIcon from '@mui/icons-material/PersonAddAltRounded';
     Sign Up
   </button> */}
 
-<Button style={{background:"rgb(30, 83, 190)"}} type='submit' variant='contained' color="secondary">Sign Up</Button>
+<Button style={{background:"rgb(196, 61, 85)"}} type='submit' variant='contained' color="secondary">Sign Up</Button>
 
 
 </div>

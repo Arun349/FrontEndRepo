@@ -72,7 +72,7 @@ function Appointment() {
 
     setTimeout(() => {
       navigate('/finalUser')
-    }, 2000);
+    }, 1000);
 
       })
     }
@@ -80,12 +80,12 @@ function Appointment() {
 
   return (
     <form onSubmit={handleAppointmentForm}>
-      <div><nav id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
+      <div><nav data-testid="Mynav" id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
       </div>
     <div>
         
         <Card className='OverallAppointment' style={{ width: '35rem',alignItems:'center' }}><br></br>
-        <h2>Appointment Page</h2><br></br>
+        <h2 data-testid="title">Appointment Page</h2><br></br>
         <div> <TextField type="text" id="outlined-basic" label="Mobile model name" variant="outlined" onChange={(e) => setModel(e.target.value)} required />  </div> 
 <br></br>
 
@@ -115,10 +115,10 @@ function Appointment() {
 
 <br></br>
 
-<Button type='submit' variant="primary">Submit</Button>
+<Button data-testid="button" type='submit' variant="primary">Submit</Button>
 <br></br>
 
-<div class="alert alert-success msg" ref={appmsg} role="alert">
+<div data-testid="scsmsg" class="alert alert-success msg" ref={appmsg} role="alert">
          Appointment Request Created!
          </div>
 

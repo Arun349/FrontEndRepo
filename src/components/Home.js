@@ -213,6 +213,7 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
+import StarIcon from '@mui/icons-material/Star';
 
 
 
@@ -265,12 +266,12 @@ function Home() {
 
     return (
         <div>
-            <nav id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light">
-                <h2 style={{ marginLeft: "3%" }}>Mobile Repair Web Application</h2>
+            <nav data-testid="Mynav" id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light">
+                <h4 style={{ marginLeft: "3%" }}>Mobile Repair Web Application</h4>
                 {/* <input
                 type="text"
                 placeholder="Search..."
-                onChange={e => setSearch(e.target.value)}
+              .  onChange={e => setSearch(e.target.value)}
             /> */}
 
                 {/* <select onChange={e => setMobileType(e.target.value)}>
@@ -280,7 +281,7 @@ function Home() {
             </select> */}
 
                 <FormControl variant="filled" fullWidth style={{ width: "10%", marginLeft: "43%" }}>
-                    <InputLabel id="demo-simple-select-label">Mobile Type</InputLabel>
+                    <InputLabel data-testid="Mytype" id="demo-simple-select-label">Mobile Type</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
@@ -295,13 +296,13 @@ function Home() {
                 </FormControl>
 
 
-                <input style={{marginLeft:"2%",width:"10%"}} class="form-control mr-sm-2"
+                <input style={{marginLeft:"3%",width:"10%"}} class="form-control mr-sm-2"
                     type="search"
                     placeholder="Search"
                     aria-label="Search" 
                     onChange={e => setSearch(e.target.value)}
 
-                   /> < SearchTwoToneIcon/>
+                   />  < SearchTwoToneIcon fontSize='large'/>
 
             </nav>
 
@@ -309,16 +310,20 @@ function Home() {
 
             {filteredData ? filteredData.map(item => (
                 <div key={item.shopId} style={{ marginTop: '5%', marginLeft: '25%' }}>
-                    <Card style={{ width: '45rem', height: '12rem' }}>
+                    <Card style={{ width: '48rem', height: '13rem' }}>
                         <Card.Body>
                        
-                            <Card.Title>{item.shopName}</Card.Title>
-                            <Card.Text>
-                                <p>{item.email}</p>
-                                <p>{item.shopContactNo}&nbsp;&nbsp;&nbsp;{item.shopAddress}</p>
-                                <p></p>
-                                <p>Mobile Type: {item.mobileType}</p>
-                                <Link to="/Appointment"><Button style={{marginLeft:"70%",marginTop:"-10%"}}  onClick={()=>{BookAppointment(item.shopId)}} type='submit' variant='contained' color="secondary">Book Appointment</Button></Link>
+                            <Card.Title style={{color:"GrayText"}}>{item.shopName}</Card.Title>
+                            <Card.Text style={{marginTop:"2%"}}>
+                                <p><b data-testid="email">Email Id: </b>{item.email}</p>
+                                <p><b>Contact : </b>{item.shopContactNo}</p>
+                                <p><b>Address : </b>{item.shopAddress}</p>
+                                <p>Mobile Type : {item.mobileType}</p>
+                                {/* <StarIcon fontSize='large' style={{color:"gold"}}/>
+                                <StarIcon fontSize='large' style={{color:"gold"}}/> */}
+                                <p style={{marginTop:"-27%" ,marginLeft:"80%"}}><StarIcon fontSize='large' style={{color:"gold"}}/><b>{item.averageRating}</b></p>
+                                
+                                <Link to="/Appointment"><Button data-testid="mybutton"  style={{marginLeft:"75%",marginTop:"10%", backgroundColor:" rgb(66, 66, 126)"}}  onClick={()=>{BookAppointment(item.shopId)}} type='submit' variant='contained'>Book Appointment</Button></Link>
                             </Card.Text>
                             
                         </Card.Body>

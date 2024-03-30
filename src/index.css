@@ -38,6 +38,7 @@ code {
 }
 body {
   background: #F2EFE5!important;
+  /* background:#ffffff; */
   /* background: #1C8EF9 !important; */
   /* background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202,1) 44%, rgba(148,187,233,1) 100%); */
@@ -121,9 +122,11 @@ margin-left: 28%;
 } */
 
 #navbsp{
-  background-color: rgba(156,39,176,255) !important;
+  background-color: rgb(66, 66, 126) !important;
+  /* background-color: rgba(156,39,176,255) !important; */
   color:white;
-  height: 70px;;
+  height: 70px;
+ 
   /* justify-content: center; */
 }
 
@@ -153,8 +156,8 @@ margin-left: 28%;
 }
 
 .color{
-  /* background-color: rgb(66, 66, 126); */
-  background-color: rgba(156,39,176,255);
+  background-color: rgb(66, 66, 126);
+  /* background-color: rgba(156,39,176,255); */
   min-height:88vh!important;
   margin-top:-40;
  
@@ -175,13 +178,16 @@ margin-left: 28%;
 }
 
 #shopnavbsp{
-  background-color:  rgb(30, 83, 190)!important;
+  /* background-color:rgb(181, 16, 49)!important; */
+  background-color:rgb(196, 61, 85)!important;
+  /* background-color: rgba(156,39,176,255) !important; */
   color: white;
 }
 
 
 .color1{
-  background-color: rgb(30, 83, 190);
+  /* background-color: rgb(30, 83, 190); */
+  background-color:rgb(196, 61, 85)!important;
 }
 
 #demo-simple-select{
@@ -189,5 +195,24 @@ margin-left: 28%;
   
 
 }
+
+#lscsmsg{
+  size: 50px;;
+}
+
+#aprmsg{
+  display: none;
+}
+
+#date{
+  margin-left: 1300px;
+}
+
+#example-datepicker{
+  margin-left: 180vh;
+  margin-top: 1% !important;
+
+}
+
 
 

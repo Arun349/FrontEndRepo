@@ -131,7 +131,7 @@ const ShopLogin = () => {
    </div> */}
   
    <div className="d-grid">
-   <Button style={{background:"rgb(30, 83, 190)"}} type='submit' variant='contained' color="secondary">Sign In</Button>
+   <Button style={{background:"rgb(196, 61, 85)"}} type='submit' variant='contained' color="secondary">Sign In</Button>
      {/* <button type="submit" className="btn btn-primary">
        Submit
      </button> */}

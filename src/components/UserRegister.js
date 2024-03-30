@@ -1,9 +1,7 @@
 import React, { Component, useEffect } from 'react'
 import axios from 'axios'
 import { useState, useRef } from 'react';
-import { Message } from 'rsuite';
 import { Navigate, useNavigate } from 'react-router-dom';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField';
 import PersonAddAltRoundedIcon from '@mui/icons-material/PersonAddAltRounded';
@@ -106,10 +104,10 @@ import Cookies from 'js-cookie';
   }
 
   return (
-    <><nav id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
+    <><nav data-testid="Mynav" id="navbsp" className="navbar navbar-expand-lg navbar-light bg-light"><h2 style={{marginLeft:"3%"}}>Mobile Repair Web Application</h2></nav>
      <div className='auth-wrapper '>   <div className='auth-inner'> <form onSubmit={handleSignupForm}>
 
-<h3 data-testid="Heading"><PersonAddAltRoundedIcon fontSize='large' id="icon"/> Sign Up</h3>
+<h3 data-testid="MyHeading"><PersonAddAltRoundedIcon fontSize='large' id="icon"/> Sign Up</h3>
 
 <div><TextField  id="outlined-basic"  label="Name" variant="outlined"  onChange={(e) => setName(e.target.value)} required /></div>
 <br></br>
@@ -162,14 +160,14 @@ import Cookies from 'js-cookie';
 
 
 
-<p ref={lenref} className='len'>Password should not be less than 8 characters</p>
-<p ref={notref} className='len'>Password Should not exceeds 14 characters</p>
+<p data-testid="password" ref={lenref} className='len'>Password should not be less than 8 characters</p>
+<p data-testid="password1" ref={notref} className='len'>Password Should not exceeds 14 characters</p>
 <div className="d-grid">
   {/* <button type="submit" className="btn btn-primary">
     Sign Up
   </button> */}
 
-<Button type='submit' variant='contained' color="secondary">Sign Up</Button>
+<Button data-testid="MyButton" style={{background:"rgb(66, 66, 126)"}} type='submit' variant='contained' color="secondary">Sign Up</Button>
 
 
 </div>
